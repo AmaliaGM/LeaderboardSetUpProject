@@ -2,9 +2,66 @@ body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+.bigContainer {
+  border: solid 2px black;
+  margin: 10%;
+  padding: 5%;
+}
+
+h1 {
+  font-size: 190%;
+}
+
 div.smallContainerA {
   display: flex;
   flex-grow: 1;
+}
+
+.highScores {
+  font-size: 150%;
+}
+
+.printScores {
+  margin-right: 5%;
+  align-items: center;
+}
+
+.printScores-title {
+  margin-left: 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+#refresh {
+  margin: 5%;
+  padding: 5px 5px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+ul {
+  border: solid 2px black;
+  padding-left: 0;
+  margin-left: 5%;
+}
+
+ul li {
+  list-style: none;
+  cursor: pointer;
+  position: relative;
+  padding: 12px 0 12px 0;
+  background: #eee;
+  font-size: 18px;
+  transition: 0.2s;
+}
+
+/* Set all odd list items to a different color (zebra-stripes) */
+ul li:nth-child(odd) {
+  background: rgba(200, 200, 196, 0.895);
+}
+
+span {
+  margin-left: 15%;
 }
 
 div.printScores {
@@ -15,6 +72,31 @@ div.smallContainerB {
   width: 100%;
 }
 
+form {
+  margin-left: 10%;
+  margin-right: 5%;
+  margin-top: 10%;
+}
+
 div.input {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 120%;
+}
+
+.inputTitle {
+  margin-left: 10%;
+  font-size: 150%;
+}
+
+input.nameInput,
+input.scoreInput {
+  margin-bottom: 10%;
+}
+
+#submit {
+  margin-left: 70%;
+  text-align: right;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
