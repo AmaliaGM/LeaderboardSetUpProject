@@ -6,7 +6,6 @@ function addElements() {
   const inputName = document.querySelector('input.nameInput').value;
   const inputScore = document.querySelector('input.scoreInput').value;
   postToApi(inputName, inputScore);
-
 } 
 const addButt = document.getElementById('submit')
 addButt.addEventListener('click', (e) => {
@@ -20,18 +19,25 @@ const baseUrl = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api'
 // CREATE A REQUEST
 const scoreList = document.querySelector('#scoreList');
 const input = document.querySelector('div.input');
-
-async function getElement() {
-  scoreList.setAttribute('src', input)
-}
-  const list = document.createDocumentFragment();
+ 
   const retrieveFromAPI = async () => {
     const res = await fetch(`${baseUrl}/games/KiAaECHQt9kyqpbrRb7E/scores`);
     const lead = await res.json();
     const leaders = lead.result;
     return leaders;
   };
-     
+let leaderBoardWrapper = document.getElementById('scoreList');
+let scoreBoard = ({ user, score }) => {
+  leaderBoardWrapper.innerHTML += `<li class="animated bounce"><span>${user}</span><span class="span">${score}</span></li>`;
+};
+
+const displayLeaders = async () => {
+  let scores = await retrieveFromAPI();
+  scores.forEach(score => {
+    scoreBoard(score);
+  })
+  
+}
 // POST -----------------------------------------------------
 
 const postToApi = async (name, score) => {
@@ -49,4 +55,4 @@ const postToApi = async (name, score) => {
 };
   
   const refresh = document.querySelector('button#refresh');
-   refresh.addEventListener('click', retrieveFromAPI);
+   refresh.addEventListener('click', displayLeaders);
