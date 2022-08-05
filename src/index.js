@@ -17,7 +17,7 @@ const postToApi = async (name, score) => {
 };
 
 // ADD NAME AND SCORES
-function addElements() {
+const addElements = () => {
   const inputName = document.querySelector('input.nameInput').value;
   const inputScore = document.querySelector('input.scoreInput').value;
   postToApi(inputName, inputScore);
