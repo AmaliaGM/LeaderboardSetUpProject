@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leaderboard Project</title>
-     <link rel="stylesheet" href="style.css">    
+<!--      <link rel="stylesheet" href="style.css">    
+ -->     <script src="build/main.js"></script>
 </head>
-<body>
+<body> 
     <!--DISPLAY THE SCORE-->
     <div class="bigContainer">
         <h1>Leaderboard</h1>
@@ -17,17 +18,20 @@
                 <ul id="scoreList">
                         <!--DISPLAY SCORES JS-->
                 </ul>
-                <button id="refresh" type="reset">REFRESH</button>
+                <div id="cont"></div>
+                <button id="refresh">REFRESH</button>
             </div>
 
         <!-- ADD A SCORE -->
         <div class="smallContainerB">
             <h2 class="inputTitle">Add Your Score</h2>
+            <form>
             <div class="input">
-            <input class="nameInput" type="text" placeholder="NAME">
-            <input class="scoreInput" type="text" placeholder="SCORE">
+                <input class="nameInput" name="usuario" type="text" placeholder="NAME">
+                <input class="scoreInput" name="pass" type="text" placeholder="SCORE">
             </div>
-            <button id="submit" type="submit">SUBMIT</button>
+                <button id="submit" type="submit">SUBMIT</button>
+            </form>
         </div>
     </div>
     </div>
