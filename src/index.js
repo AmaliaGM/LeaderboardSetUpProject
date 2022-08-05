@@ -21,7 +21,7 @@ const addElements = () => {
   const inputName = document.querySelector('input.nameInput').value;
   const inputScore = document.querySelector('input.scoreInput').value;
   postToApi(inputName, inputScore);
-}
+};
 const addButt = document.getElementById('submit');
 addButt.addEventListener('click', (e) => {
   e.preventDefault();
